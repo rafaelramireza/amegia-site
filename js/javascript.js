@@ -1,4 +1,5 @@
-﻿document.getElementById("form").addEventListener("submit", function(e) {
-    e.preventDefault();
-    alert("Formulario enviado (demo)");
+﻿document.querySelectorAll("button").forEach(btn => {
+    btn.addEventListener("click", () => {
+        alert("Sección en construcción");
+    });
 });
