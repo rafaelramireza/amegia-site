@@ -1,18 +1,40 @@
-﻿body {
+﻿:root {
+    --azul-principal: #5A6FA8;
+    --azul-oscuro: #2C3E50;
+    --rosa: #E89AB0;
+    --rosa-claro: #F5C6D6;
+    --verde-claro: #CFE8E5;
+    --fondo: #F7F8FB;
+    --blanco: #FFFFFF;
+}
+
+body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f5f7fa;
+    background: var(--fondo);
+    color: var(--azul-oscuro);
 }
 
 /* HEADER */
 .header {
     text-align: center;
     padding: 20px;
-    background: white;
+    background: var(--blanco);
 }
 
 .logo {
     max-width: 180px;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: var(--azul-principal);
+    font-weight: bold;
 }
 
 /* HERO */
@@ -25,43 +47,77 @@
 }
 
 .card {
-    background: white;
+    background: var(--blanco);
+    border-top: 5px solid var(--azul-principal);
     padding: 30px;
     max-width: 350px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     text-align: center;
 }
 
-.card h2 {
-    margin-top: 0;
+h1, h2 {
+    color: var(--azul-principal);
 }
 
-.card button {
+/* BOTONES */
+.btn {
+    display: inline-block;
     margin-top: 15px;
     padding: 10px 20px;
-    border: none;
-    background: #2c3e50;
+    background: var(--rosa);
     color: white;
-    cursor: pointer;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: 0.3s;
 }
 
-/* INSTITUCIONAL */
-.institucional {
-    padding: 40px;
-    text-align: center;
+.btn:hover {
+    background: var(--rosa-claro);
 }
 
-/* AFILIACIONES */
+/* SECCIONES */
+.institucional,
 .afiliaciones {
-    padding: 20px;
+    padding: 40px 20px;
     text-align: center;
+}
+
+/* MIEMBRO */
+.miembro {
+    background: linear-gradient(135deg, var(--rosa-claro), var(--verde-claro));
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.intro {
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
+
+.beneficios {
+    list-style: none;
+    padding: 0;
+}
+
+.beneficios li {
+    margin: 10px 0;
+}
+
+.cta {
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.contacto p {
+    margin: 5px 0;
     font-size: 14px;
 }
 
 /* FOOTER */
 .footer {
-    background: #2c3e50;
+    background: var(--azul-oscuro);
     color: white;
     padding: 30px;
     text-align: center;
