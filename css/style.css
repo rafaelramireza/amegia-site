@@ -135,3 +135,34 @@ h1, h2 {
         align-items: center;
     }
 }
+/* ARTÍCULO */
+.articulo {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.articulo-card {
+    background: var(--blanco);
+    max-width: 600px;
+    margin: auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* VIDEO */
+.video {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.video-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 450px;
+    border-radius: 10px;
+}

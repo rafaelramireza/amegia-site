@@ -1,2 +1,4 @@
 ﻿User-agent: *
 Allow: /
+
+Sitemap: https://amegia.org/sitemap.xml
