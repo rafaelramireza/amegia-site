@@ -307,21 +307,124 @@ h1, h2 {
     width: 100%;
     overflow: hidden;
     position: relative;
+    margin-bottom: 30px;
 }
 
 .slides {
     position: relative;
     width: 100%;
-    height: 450px;
+    max-width: 1200px;
+    height: 450px; /* Aumentamos el alto para que se vea mejor en PC */
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    background-color: var(--verde-claro);
+}
+
+.slide-link {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    pointer-events: none;
+}
+
+.slide-link.active {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .slide {
     width: 100%;
-    height: 450px;
-    object-fit: cover;
-    display: none;
+    height: 100%;
+    object-fit: contain; /* CAMBIO: 'contain' asegura que la imagen se vea entera sin recortes */
+    display: block;
+    cursor: pointer;
 }
 
-.slide.active {
-    display: block;
+@media (max-width: 768px) {
+    .slides {
+        height: 200px; /* Un poco más alto que los 140px anteriores */
+    }
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.7);
+    border: none;
+    font-size: 24px;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 100; /* Aumentamos el z-index */
+    transition: background 0.3s;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.slider-btn:hover {
+    background: white;
+}
+/* Contenedor para centrar la foto */
+.foto-perfil-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo de la imagen */
+.foto-perfil {
+    width: 180px;      /* Tamaño fijo */
+    height: 180px;     /* Debe ser igual al ancho */
+    border-radius: 50%; /* Esto la hace circular */
+    object-fit: cover; /* Evita que la foto se estire */
+    border: 4px solid var(--azul-principal); /* Borde con el color de tu marca */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.foto-perfil:hover {
+    transform: scale(1.05); /* Efecto sutil al pasar el mouse */
+}
+
+/* Ajuste para que el texto se vea bien centrado en la cabecera del CV */
+.perfil-completo h2 {
+    text-align: center;
+}
+.perfil-completo .cargo {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+@media (min-width: 768px) {
+    .perfil-completo {
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+        text-align: left; /* Alinea texto a la izquierda */
+    }
+
+    .foto-perfil-container {
+        flex-shrink: 0; /* Evita que la foto se haga pequeña */
+    }
+}
+.trayectoria-completa {
+    max-width: 900px;         /* Estrechamos un poco el contenedor principal */
+    margin: auto;
+    padding: 60px 20px;
+}
+
+.perfil-completo {
+    padding: 40px;            /* Más espacio interno en cada tarjeta de doctor */
+    margin-bottom: 50px;
 }

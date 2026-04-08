@@ -1,7 +1,9 @@
 ﻿document.addEventListener("DOMContentLoaded", () => {
     console.log("Sitio AMEGIA cargado correctamente");
 
-    // Desplazamiento suave para enlaces internos
+    /* =========================
+       DESPLAZAMIENTO SUAVE
+    ========================== */
     const enlacesInternos = document.querySelectorAll('a[href^="#"]');
 
     enlacesInternos.forEach(enlace => {
@@ -18,7 +20,9 @@
         });
     });
 
-    // Mensaje temporal para botones sin destino
+    /* =========================
+       BOTONES EN CONSTRUCCIÓN
+    ========================== */
     const botonesAcceso = document.querySelectorAll('.btn[href="#"]');
 
     botonesAcceso.forEach(btn => {
@@ -28,20 +32,45 @@
         });
     });
 
-    // Carrusel
-    const slides = document.querySelectorAll(".slide");
+    /* =========================
+       CARRUSEL DE BANNER
+    ========================== */
+    const slides = document.querySelectorAll(".slide-link");
+    const nextBtn = document.querySelector(".next");
+    const prevBtn = document.querySelector(".prev");
 
-    if (slides.length > 0) {
+    if (slides.length > 1) {
         let currentSlide = 0;
 
-        function cambiarSlide() {
-            slides[currentSlide].classList.remove("active");
+        function mostrarSlide(index) {
+            slides.forEach(slide => {
+                slide.classList.remove("active");
+            });
 
-            currentSlide = (currentSlide + 1) % slides.length;
-
-            slides[currentSlide].classList.add("active");
+            slides[index].classList.add("active");
         }
 
-        setInterval(cambiarSlide, 4000);
+        function siguienteSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            mostrarSlide(currentSlide);
+        }
+
+        function anteriorSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            mostrarSlide(currentSlide);
+        }
+
+        // Cambio automático cada 4 segundos
+        setInterval(siguienteSlide, 4000);
+
+        // Botón siguiente
+        if (nextBtn) {
+            nextBtn.addEventListener("click", siguienteSlide);
+        }
+
+        // Botón anterior
+        if (prevBtn) {
+            prevBtn.addEventListener("click", anteriorSlide);
+        }
     }
 });
