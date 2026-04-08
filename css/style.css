@@ -428,3 +428,99 @@ h1, h2 {
     padding: 40px;            /* Más espacio interno en cada tarjeta de doctor */
     margin-bottom: 50px;
 }
+/* SECCIÓN ACERCA DE NOSOTROS */
+.nosotros {
+    padding: 80px 20px;
+    background-color: var(--blanco);
+}
+
+.nosotros-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.nosotros-imagen {
+    flex: 1;
+}
+
+.nosotros-imagen img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.nosotros-texto {
+    flex: 1.2;
+}
+
+.nosotros-texto h2 {
+    margin-top: 0;
+    font-size: 2.2rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+/* Una pequeña línea decorativa bajo el título */
+.nosotros-texto h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--rosa);
+    border-radius: 2px;
+}
+
+.nosotros-texto p {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: var(--azul-oscuro);
+    margin-top: 20px;
+    text-align: justify;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 992px) {
+    .nosotros-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nosotros-texto h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .nosotros-imagen {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+.institucional-mision {
+    background-color: var(--azul-principal); /* Usamos tu azul para dar solidez */
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.mision-contenido {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.institucional-mision h2 {
+    color: white; /* Sobrescribimos el azul del H2 general */
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.institucional-mision p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    font-style: italic; /* Le da un toque de "frase célebre" o compromiso */
+}
