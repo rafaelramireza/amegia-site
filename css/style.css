@@ -524,3 +524,41 @@ h1, h2 {
     line-height: 1.6;
     font-style: italic; /* Le da un toque de "frase célebre" o compromiso */
 }
+
+.cta + .btn {
+    margin-top: 15px;
+}
+
+.redes-sociales {
+    margin-top: 15px;
+}
+
+.redes-sociales a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.redes-sociales a:hover {
+    text-decoration: underline;
+}
+
+.redes-sociales {
+    margin-top: 15px;
+}
+
+.redes-sociales a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.redes-sociales img {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.3s ease;
+}
+
+.redes-sociales img:hover {
+    transform: scale(1.15);
+}
