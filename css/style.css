@@ -562,3 +562,68 @@ h1, h2 {
 .redes-sociales img:hover {
     transform: scale(1.15);
 }
+
+/* CONTENIDO DEL PERFIL */
+
+.contenido-perfil {
+    flex: 1;
+}
+
+/* CONTACTO PROFESIONAL */
+
+.contacto-profesional {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 2px solid #e5e5e5;
+}
+
+.contacto-profesional h3 {
+    color: var(--azul-principal);
+    margin-bottom: 15px;
+}
+
+.contacto-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.contacto-links a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 15px;
+
+    background: var(--fondo);
+    border-radius: 8px;
+
+    text-decoration: none;
+    color: var(--azul-oscuro);
+    font-weight: bold;
+
+    transition: all 0.3s ease;
+}
+
+.contacto-links a:hover {
+    background: var(--verde-claro);
+    transform: translateY(-2px);
+}
+
+.contacto-links img {
+    width: 22px;
+    height: 22px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .contacto-links {
+        flex-direction: column;
+    }
+
+    .contacto-links a {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
